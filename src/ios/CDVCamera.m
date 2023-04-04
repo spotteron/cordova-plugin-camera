@@ -164,7 +164,7 @@ static NSString* toBase64(NSData* data) {
                  {
                      // Denied; show an alert
                      dispatch_async(dispatch_get_main_queue(), ^{
-                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"Access to the camera has been prohibited; please enable it in the Settings app to continue.", nil) preferredStyle:UIAlertControllerStyleAlert];
+                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"Access to the camera has been prohibited.", nil) preferredStyle:UIAlertControllerStyleAlert];
                          [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                              [weakSelf sendNoPermissionResult:command.callbackId];
                          }]];
@@ -185,7 +185,7 @@ static NSString* toBase64(NSData* data) {
                 if (!granted) {
                     // Denied; show an alert
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"Access to the camera roll has been prohibited; please enable it in the Settings to continue.", nil) preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"Access to the camera roll has been prohibited.", nil) preferredStyle:UIAlertControllerStyleAlert];
                         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                             [weakSelf sendNoPermissionResult:command.callbackId];
                         }]];
